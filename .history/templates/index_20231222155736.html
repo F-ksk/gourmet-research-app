@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グルメリサーチサイト</title>
+</head>
+<body>
+
+<!-- 検索条件設定画面 -->
+<section id="search-settings">
+    <h1>検索条件設定</h1>
+    <!-- ここに検索条件の入力フォームやボタンを配置 -->
+    <form id="search-form">
+        <label for="keyword">キーワード:</label>
+        <input type="text" id="keyword" name="keyword" required>
+        <label for="location">場所:</label>
+        <input type="text" id="location" name="location" required>
+        <button type="button" onclick="getCurrentLocation()">現在地から検索</button>
+        <a href="/result" role="button">検索</a>
+    </form>
+</section>
+
+<script src="./index.js"></script>
+
+</body>
+</html>

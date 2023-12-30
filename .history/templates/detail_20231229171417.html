@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detail.css') }}">
+    <title>グルメリサーチサイト - 詳細ページ</title>
+</head>
+<body>
+
+<!-- 詳細表示画面 -->
+<section id="shop-detail">
+    <h1>詳細</h1>
+    <a href="/result" role="button">戻る</a>
+    <div id="detail-container">
+        <article>
+            <div class="detail-info">
+                <h3>{{ shop_detail.name }}</h3>
+                <p>{{ shop_detail.catch }}</p>
+                <p>住所： {{ shop_detail.location }}</p>
+                <p>アクセス： {{ shop_detail.access }}</p>
+                <p>営業時間： {{ shop_detail.open }}</p>
+                <p>ジャンル： {{ shop_detail.genre }}</p>
+            </div>
+            <div class="detail-img">
+                <img src={{ shop_detail.photo_l }} alt="Description of the image">
+            </div>
+        </article>
+    </div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グルメリサーチサイト</title>
+</head>
+<body>
+
+<!-- 検索条件設定画面 -->
+<section id="search-settings">
+    <h1>検索条件設定</h1>
+    <!-- ここに検索条件の入力フォームやボタンを配置 -->
+    <form id="search-form">
+        <label for="keyword">キーワード:</label>
+        <input type="text" id="keyword" name="keyword" required>
+        <label for="location">場所:</label>
+        <input type="text" id="location" name="location" required>
+        <a href="/result" role="button">検索</a>
+    </form>
+</section>
+
+<!-- 検索結果表示画面 -->
+<section id="search-results" style="display: none;">
+    <h1>検索結果</h1>
+    <!-- ここに検索結果の表示を配置 -->
+    <div id="results-container">
+        <!-- 検索結果がここに表示される -->
+    </div>
+    <button type="button" onclick="showSearchSettings()">条件変更</button>
+</section>
+
+<script>
+    // JavaScriptで画面を切り替える関数を定義
+    function performSearch() {
+        document.getElementById('search-settings').style.display = 'none';
+        document.getElementById('search-results').style.display = 'block';
+        // ここに検索結果の表示処理を追加
+    }
+
+    function showSearchSettings() {
+        document.getElementById('search-results').style.display = 'none';
+        document.getElementById('search-settings').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

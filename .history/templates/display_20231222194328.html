@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グルメリサーチサイト - 検索結果</title>
+</head>
+<body>
+
+<!-- 検索結果表示画面 -->
+<section id="search-results">
+    <h1>検索結果</h1>
+    <!-- ここに検索結果の表示を配置 -->
+    <div id="results-container">
+        <!-- 検索結果 -->
+        {% for post in posts %}
+        <article>
+            <h2>{{ post.title }}</h2>
+            <a href="/{{post.id}}/update" role="button">編集</a>
+            <a href="/{{post.id}}/delete" role="button">削除</a>
+            <p>作成日時： {{ post.created_at }}</p>
+            <p>{{ post.body }}</p>
+        </article>
+        {% endfor %}
+    </div>
+    <a href="/" role="button">条件変更</a>
+</section>
+
+
+</body>
+</html>

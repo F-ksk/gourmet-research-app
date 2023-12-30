@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グルメリサーチサイト - 検索結果</title>
+</head>
+<body>
+
+<!-- 検索結果表示画面 -->
+<section id="search-results">
+    <h1>検索結果</h1>
+    <!-- ここに検索結果の表示を配置 -->
+    <div id="results-container">
+        <!-- 検索結果がここに表示される -->
+    </div>
+    <a href="/" role="button">条件変更</a>
+    <button type="button" onclick="showSearchSettings()">条件変更</button>
+</section>
+
+<script>
+    // JavaScriptで画面を切り替える関数を定義
+    function showSearchSettings() {
+        document.getElementById('search-results').style.display = 'none';
+        document.getElementById('search-settings').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

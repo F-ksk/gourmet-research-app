@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グルメリサーチサイト</title>
+</head>
+<body>
+
+<!-- 検索条件設定画面 -->
+<section id="search-settings">
+    <h1>検索条件設定</h1>
+    <!-- ここに検索条件の入力フォームやボタンを配置 -->
+    <form id="search-form" method="POST">
+        <label for="keyword">キーワード:</label>
+        <input type="text" id="keyword" name="keyword">
+        <label>
+            <input type="radio" name="search-type" value="none">
+            指定しない
+        </label>
+        <label>
+            <input type="radio" name="search-type" id="current-location" value="current-location">
+            現在地から検索
+        </label>
+        <label>
+            <input type="radio" name="search-type" value="location" checked>
+            地名から検索
+        </label>
+        <label for="location">地名:</label>
+        <input type="text" id="location" name="location" >
+        
+        <input type="submit" value="search">
+
+        <div class="txt-margin" style="display: block;">
+            <input type="text" id="latitude" name="latitude" >
+            <input type="text" id="longitude" name="longitude" >
+        </div>
+    
+    </form>
+    <!--<div class="txt-margin">
+        <p>緯度：<span id="latitude"></span><span>度</span></p>
+        <p>経度：<span id="longitude"></span><span>度</span></p>
+    </div>-->
+</section>
+
+<script>
+    // ラジオボタンの変更イベント
+    document.getElementById("location").addEventListener("change", function() {
+        // 地名の入力フォームを有効にする
+        document.getElementById("location").disabled = false;
+    });
+
+    document.getElementById("current-location").addEventListener("change", function() {
+        // 地名の入力フォームを無効にする
+        document.getElementById("location").disabled = true;
+        // 位置情報を取得する
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    });
+
+    // ボタンを押した時の処理
+    //document.getElementById("current-location").onclick = function(){
+    //    // 位置情報を取得する
+    //    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    //};
+    
+    // 取得に成功した場合の処理
+    function successCallback(position){
+        // 緯度を取得し画面に表示
+        var latitude = position.coords.latitude;
+        document.getElementById("latitude").value = latitude;
+        // 経度を取得し画面に表示
+        var longitude = position.coords.longitude;
+        document.getElementById("longitude").value = longitude;
+    };
+    
+    // 取得に失敗した場合の処理
+    function errorCallback(error){
+        alert("位置情報が取得できませんでした");
+    };</script>
+
+</body>
+</html>

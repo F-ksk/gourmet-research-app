@@ -1,0 +1,87 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+}
+
+/* 詳細表示画面全体のスタイル */
+#shop-detail {
+    max-width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* タイトルとボタンの配置 */
+.detail-header{
+    display: flex;
+}
+
+/* 戻るボタンのスタイル */
+a[role="button"] {
+    text-decoration: none;
+    color: #007bff;
+    display: inline-block;
+    padding: 10px 15px;
+    margin: auto;
+    font-size: 18px;
+}
+
+a[role="button"]:hover {
+    margin: auto;
+    text-decoration: underline;
+}
+
+/* タイトル */
+h1 {
+    margin-left: 40px;
+    font-size: 24px;
+    color: #333;
+    width: 65%;
+}
+
+/* 詳細情報コンテナ */
+#detail-container {
+    margin-top: 20px;
+}
+
+/* 各詳細情報アイテムのスタイル */
+article {
+    border: 1px solid #ddd;
+    padding: 15px;
+    display: flex;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+/* 詳細情報(テキスト) */
+.detail-info{
+    width: 70%;
+}
+
+/* 店舗名 */
+h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/* 詳細情報 */
+p {
+    margin-bottom: 10px;
+}
+
+/* 詳細情報(画像) */
+.detail-img{
+    width: 25%;
+    align-self: center;
+    margin-left: 5%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}

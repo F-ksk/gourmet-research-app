@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グルメリサーチサイト</title>
+</head>
+<body>
+
+<!-- 検索条件設定画面 -->
+<section id="search-settings">
+    <h1>検索条件設定</h1>
+    <!-- ここに検索条件の入力フォームやボタンを配置 -->
+    <form id="search-form" method="POST">
+        <!-- <label for="keyword">キーワード:</label>
+        <input type="text" id="keyword" name="keyword"> -->
+        <div class="area">
+            <label for="search-area">検索エリア:</label>
+            <label>
+                <input type="radio" name="search-type" id="current-location" value="current-location">
+                現在地から検索
+            </label>
+            <label>
+                <input type="radio" name="search-type" id="location" value="location" checked>
+                地名から検索
+            </label>
+            <label for="location">地名:</label>
+            <input type="text" id="text-location" name="location" value="東京">
+        </div>
+        <div class="range">
+            <label for="search-range">検索範囲:</label>
+            <label><input type="radio" name="search-range" value="1">300m</label>
+            <label><input type="radio" name="search-range" value="2">500m</label>
+            <label><input type="radio" name="search-range" value="3" checked>1000m</label>
+            <label><input type="radio" name="search-range" value="4">2000m</label>
+            <label><input type="radio" name="search-range" value="5">3000m</label>
+        </div>
+        <div class="genre">
+            <label><input type="radio" name="search-genre" value="居酒屋">居酒屋</label>
+            <label><input type="radio" name="search-genre" value="ダイニングバー・バル">ダイニングバー・バル</label>
+            <label><input type="radio" name="search-genre" value="創作料理">創作料理</label>
+            <label><input type="radio" name="search-genre" value="和食">和食</label>
+            <label><input type="radio" name="search-genre" value="洋食">洋食</label>
+            <label><input type="radio" name="search-genre" value="イタリアン・フレンチ">イタリアン・フレンチ</label>
+            <label><input type="radio" name="search-genre" value="中華">中華</label>
+            <label><input type="radio" name="search-genre" value="アジア・エスニック料理">アジア・エスニック料理</label>
+            <label><input type="radio" name="search-genre" value="各国料理">各国料理</label>
+            <label><input type="radio" name="search-genre" value="カラオケ・パーティ">カラオケ・パーティ</label>
+            <label><input type="radio" name="search-genre" value="バー・カクテル">バー・カクテル</label>
+            <label><input type="radio" name="search-genre" value="ラーメン">ラーメン</label>
+            <label><input type="radio" name="search-genre" value="お好み焼き・もんじゃ">お好み焼き・もんじゃ</label>
+            <label><input type="radio" name="search-genre" value="カフェ・スイーツ">カフェ・スイーツ</label>
+            <label><input type="radio" name="search-genre" value="その他グルメ">その他グルメ</label>
+        </div>
+        <div class="range">
+        <input type="submit" value="search">
+
+        <div class="txt-margin" >
+            <input type="text" id="latitude" name="latitude" >
+            <input type="text" id="longitude" name="longitude" >
+        </div>
+    
+    </form>
+</section>
+
+<script>
+    const input_location = document.getElementById("text-location")
+
+    // ラジオボタンの変更イベント
+    document.getElementById("location").addEventListener("change", function() {
+        // 中身を空にして地名の入力フォームを有効にする
+        input_location.disabled = false;
+    });
+
+    document.getElementById("current-location").addEventListener("change", function() {
+        // 地名の入力フォームを無効にする
+        input_location.value = "";
+        input_location.disabled = true;
+        // 位置情報を取得する
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    });
+
+    // ボタンを押した時の処理
+    //document.getElementById("current-location").onclick = function(){
+    //    // 位置情報を取得する
+    //    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    //};
+    
+    // 取得に成功した場合の処理
+    function successCallback(position){
+        // 緯度を取得し画面に表示
+        var latitude = position.coords.latitude;
+        document.getElementById("latitude").value = latitude;
+        // 経度を取得し画面に表示
+        var longitude = position.coords.longitude;
+        document.getElementById("longitude").value = longitude;
+    };
+    
+    // 取得に失敗した場合の処理
+    function errorCallback(error){
+        alert("位置情報が取得できませんでした");
+    };</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グルメリサーチサイト</title>
+</head>
+<body>
+    <script src="geolocation.js"></script>
+<!-- 検索条件設定画面 -->
+<section id="search-settings">
+    <h1>検索条件設定</h1>
+    <!-- ここに検索条件の入力フォームやボタンを配置 -->
+    <form id="search-form">
+        <label for="keyword">キーワード:</label>
+        <input type="text" id="keyword" name="keyword" required>
+        <label for="location">場所:</label>
+        <input type="text" id="location" name="location" required>
+        <button type="button" id="current-location">現在地から検索</button>
+        <a href="/result" role="button">検索</a>
+    </form>
+    <div class="txt-margin">
+        <p>緯度：<span id="latitude">???</span><span>度</span></p>
+        <p>経度：<span id="longitude">???</span><span>度</span></p>
+    </div>
+</section>
+
+
+</body>
+</html>

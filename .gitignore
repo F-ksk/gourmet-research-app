@@ -1,0 +1,5 @@
+# Ignore config.py
+config.py
+
+# Ignore config folder and all its contents
+/config/

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/display.css') }}">
+    <title>グルメリサーチサイト - 結果一覧ページ</title>
+</head>
+<body>
+    <a href="http://webservice.recruit.co.jp/"><img src="http://webservice.recruit.co.jp/banner/hotpepper-s.gif" alt="ホットペッパーグルメ Webサービス" width="135" height="17" border="0" title="ホットペッパーグルメ Webサービス"></a>
+    <!-- 検索結果表示画面 -->
+    <section id="search-results">
+        <div class="result-header">
+            <h1>検索結果</h1>
+            <a href="/" class="change-btn" role="button">条件変更</a>
+        </div>
+        <!-- ここに検索結果を表示 -->
+        <div class="pagination-info">{{ pagination.info }}</div>
+        <div class="pagination-links">{{ pagination.links }}</div>
+        <div id="results-container">
+            {% if results|length > 0  %}
+                <!-- 検索結果 -->
+                {% for result in results %}
+                <article>
+                    <div class="result-info">
+                        <h3>店舗名： {{ result.name }}</h3>
+                        <p>住所： {{ result.location }}</p>
+                        <p>アクセス： {{ result.access }}</p>
+                        <p>ジャンル： {{ result.genre }}</p>
+                        <a href="/{{ result.shop_id }}/detail" class="detail-btn"  role="button">詳細へ</a>
+                    </div>
+                    <div class="result-img">
+                        <img src={{ result.photo_m }} alt="Description of the image">
+                    </div>
+                </article>
+                {% endfor %}
+                <div class="pagination-links">{{ pagination.links }}</div>
+            <!-- 検索結果がない場合 -->
+            {% else %}
+                <h2>条件に合うお店はありません</h2>
+            {% endif %}
+        </div>
+
+    </section>
+</body>
+</html>

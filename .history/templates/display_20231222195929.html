@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グルメリサーチサイト - 検索結果</title>
+</head>
+<body>
+
+<!-- 検索結果表示画面 -->
+<section id="search-results">
+    <h1>検索結果</h1>
+    <!-- ここに検索結果の表示を配置 -->
+    <div id="results-container">
+        <!-- 検索結果 -->
+        {% for result in results %}
+        <h2>dkajfnv</h2>
+        <article>
+            <h2>店舗名： {{ result.name }}</h2>
+            <p>住所： {{ result.location }}</p>
+            <p>ジャンル： {{ result.genre }}</p>
+        </article>
+        {% endfor %}
+    </div>
+    <a href="/" role="button">条件変更</a>
+</section>
+
+
+</body>
+</html>

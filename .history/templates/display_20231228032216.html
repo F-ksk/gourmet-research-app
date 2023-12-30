@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グルメリサーチサイト - 検索結果</title>
+</head>
+<body>
+
+<!-- 検索結果表示画面 -->
+<section id="search-results">
+    <h1>検索結果</h1>
+    <a href="/" role="button">条件変更</a>
+    <!-- ここに検索結果の表示を配置 -->
+    <div id="results-container">
+        <!-- 検索結果 -->
+        {% for result in results %}
+        <article>
+            <h3>店舗名： {{ result.name }}</h3>
+            <p>住所： {{ result.location }}</p>
+            <p>ジャンル： {{ result.genre }}</p>
+            <p>アクセス： {{ result.access }}</p>
+            <p>id: {{ result.id }}</p>
+            <img src={{ result.photo }} alt="Description of the image">
+            <a href="/{{ result.shop_id }}/details" role="button">詳細ページへ</a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+
+</body>
+</html>

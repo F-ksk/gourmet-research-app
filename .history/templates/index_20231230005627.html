@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='js/geolocation.js') }}"></script>
+
+    <title>グルメリサーチサイト</title>
+</head>
+<body>
+    <div class="search-header">
+        <a href="http://webservice.recruit.co.jp/"><img src="http://webservice.recruit.co.jp/banner/hotpepper-s.gif" alt="ホットペッパーグルメ Webサービス" width="135" height="17" border="0" title="ホットペッパーグルメ Webサービス"></a>
+        <h1>グルメリサーチサイト  -検索条件設定-</h1>
+    </div>
+    <!-- 検索条件設定画面 -->
+    <section id="search-settings">
+        <form id="search-form" method="POST">
+            <!-- 検索エリア用ラジオボタン -->
+            <h4 for="search-area">検索エリア</h4>
+            <div class="area">
+                <input id="current-location" class="radio-input radio-area-input" type="radio" name="search-type" value="current-location" checked>
+                <label class="radio-label radio-area-label" for="current-location">現在地から検索</label>
+                <input id="location" class="radio-input radio-area-input" type="radio" name="search-type" value="location">
+                <label id="txt-area-label" class="radio-label radio-area-label" for="location">地名から検索
+                    <input type="text" id="text-location" name="location" value="東京">
+                </label>
+            </div>
+            <!-- 検索範囲用ラジオボタン -->
+            <h4 for="search-range">検索範囲</h4>
+            <div class="range">
+                <input id="300m" class="radio-input radio-range-input" type="radio" name="search-range" value="1"/>
+                <label class="radio-label radio-range-label" for="300m">300m</label>
+                <input id="500m" class="radio-input radio-range-input" type="radio" name="search-range" value="2"/>
+                <label class="radio-label radio-range-label" for="500m">500m</label>
+                <input id="1000m" class="radio-input radio-range-input" type="radio" name="search-range" value="3" checked="checked"/>
+                <label class="radio-label radio-range-label" for="1000m">1000m</label>
+                <input id="2000m" class="radio-input radio-range-input" type="radio" name="search-range" value="4"/>
+                <label class="radio-label radio-range-label" for="2000m">2000m</label>
+                <input id="3000m" class="radio-input radio-range-input" type="radio" name="search-range" value="5"/>
+                <label class="radio-label radio-range-label" for="3000m">3000m</label>
+            </div>
+            <!-- 検索ジャンル用ラジオボタン -->
+            <h4 for="search-genre">ジャンル</h4>
+            <div class="genre">
+                <input id="izakaya" class="radio-input radio-genre-input" type="radio" name="search-genre" value="居酒屋"/>
+                <label class="radio-label radio-genre-label" for="izakaya">居酒屋</label>
+            
+                <input id="dining-bar" class="radio-input radio-genre-input" type="radio" name="search-genre" value="ダイニングバー・バル"/>
+                <label class="radio-label radio-genre-label" for="dining-bar">ダイニングバー・バル</label>
+            
+                <input id="creative" class="radio-input radio-genre-input" type="radio" name="search-genre" value="創作料理"/>
+                <label class="radio-label radio-genre-label" for="creative">創作料理</label>
+            
+                <input id="japanese" class="radio-input radio-genre-input" type="radio" name="search-genre" value="和食"/>
+                <label class="radio-label radio-genre-label" for="japanese">和食</label>
+            
+                <input id="western" class="radio-input radio-genre-input" type="radio" name="search-genre" value="洋食"/>
+                <label class="radio-label radio-genre-label" for="western">洋食</label>
+            
+                <input id="italian" class="radio-input radio-genre-input" type="radio" name="search-genre" value="イタリアン・フレンチ"/>
+                <label class="radio-label radio-genre-label" for="italian">イタリアン・フレンチ</label>
+            
+                <input id="chinese" class="radio-input radio-genre-input" type="radio" name="search-genre" value="中華"/>
+                <label class="radio-label radio-genre-label" for="chinese">中華</label>
+            
+                <input id="asian" class="radio-input radio-genre-input" type="radio" name="search-genre" value="アジア・エスニック料理"/>
+                <label class="radio-label radio-genre-label" for="asian">アジア・エスニック料理</label>
+            
+                <input id="international" class="radio-input radio-genre-input" type="radio" name="search-genre" value="各国料理"/>
+                <label class="radio-label radio-genre-label" for="international">各国料理</label>
+            
+                <input id="karaoke" class="radio-input radio-genre-input" type="radio" name="search-genre" value="カラオケ・パーティ"/>
+                <label class="radio-label radio-genre-label" for="karaoke">カラオケ・パーティ</label>
+            
+                <input id="bar" class="radio-input radio-genre-input" type="radio" name="search-genre" value="バー・カクテル"/>
+                <label class="radio-label radio-genre-label" for="bar">バー・カクテル</label>
+            
+                <input id="ramen" class="radio-input radio-genre-input" type="radio" name="search-genre" value="ラーメン"/>
+                <label class="radio-label radio-genre-label" for="ramen">ラーメン</label>
+            
+                <input id="okonomiyaki" class="radio-input radio-genre-input" type="radio" name="search-genre" value="お好み焼き・もんじゃ"/>
+                <label class="radio-label radio-genre-label" for="okonomiyaki">お好み焼き・もんじゃ</label>
+            
+                <input id="cafe-sweets" class="radio-input radio-genre-input" type="radio" name="search-genre" value="カフェ・スイーツ"/>
+                <label class="radio-label radio-genre-label" for="cafe-sweets">カフェ・スイーツ</label>
+            
+                <input id="other-gourmet" class="radio-input radio-genre-input" type="radio" name="search-genre" value="その他グルメ"/>
+                <label class="radio-label radio-genre-label" for="other-gourmet">その他グルメ</label>
+            </div>
+            <!-- 検索ボタン -->
+            <input type="submit" value="検索">
+
+            <div class="coordinates">
+                <input type="text" id="latitude" name="latitude" >
+                <input type="text" id="longitude" name="longitude" >
+            </div>
+        </form>
+    </section>
+</body>
+</html>
