@@ -1,10 +1,5 @@
 import requests
 import os
-from os.path import join, dirname
-from dotenv import load_dotenv
-
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
 
 API_KEY = os.environ.get("API_KEY")
 #from config import API_KEY
@@ -119,7 +114,6 @@ def genre_code(genre):
     #イタリアン・フレンチ,中華,アジア・エスニック料理,各国料理
     #カラオケ・パーティ,バー・カクテル,ラーメン,お好み焼き・もんじゃ,
     #カフェ・スイーツ,その他グルメ
-    print("API_KEY:"+API_KEY)
     base_url = "http://webservice.recruit.co.jp/hotpepper/genre/v1/"
     params = {
         "key": API_KEY,

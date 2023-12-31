@@ -29,7 +29,7 @@ def search_type_to_redirect(search_type):
         # エリアとジャンルはコードに変更
         area = area_code(location)
         genre = genre_code(genre)
-        print("API_KEY:"+API_KEY)
+        print(API_KEY)
         return redirect(url_for('result_area', genre=genre, area=area, range=range_value))
     elif search_type == "current-location":
         # 緯度・経度, ジャンル, 範囲を取得

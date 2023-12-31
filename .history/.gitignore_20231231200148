@@ -1,4 +1,4 @@
-# Ignore config.py .env
+# Ignore config.py
 config.py
 .env
 

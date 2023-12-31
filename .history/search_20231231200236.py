@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-API_KEY = os.environ.get("API_KEY")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 #from config import API_KEY
 
 #-----------------------------------------------
