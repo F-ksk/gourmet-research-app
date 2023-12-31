@@ -139,5 +139,4 @@ def genre_code(genre):
 
     except Exception as e:
         print(f"エラーが発生しました: {e}")
-        return ""
 
