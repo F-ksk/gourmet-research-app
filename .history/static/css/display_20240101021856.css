@@ -55,14 +55,14 @@ h1 {
 }
 
 .content nav {
-    background-color: gray; 
+    background-color: gray; /* ナビゲーションの背景色を青に変更 */
     padding: 10px;
     z-index: 9999;
 }
 
 .page-item.active .page-link {
-    color: #fff; 
-    background-color: black; 
+    color: #fff; /* アクティブなページのテキストカラーを白に変更 */
+    background-color: black; /* アクティブなページの背景色を青に変更 */
     border-color: black;
 }
 
@@ -83,9 +83,9 @@ h1 {
 
 .pagination li a {
     text-decoration: none;
-    color: black;
+    color: black; /* ページリンクのテキストカラーを青に変更 */
     padding: 5px 10px;
-    border: 1px solid black; 
+    border: 1px solid black; /* ページリンクのボーダーカラーを青に変更 */
     border-radius: 5px;
     transition: box-shadow 0.2s;
 }
@@ -140,25 +140,23 @@ img {
 
 /* 詳細ボタンのスタイル */
 .detail-btn {
-    width: 100px;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     padding: 10px 15px;
+    background-color: #ff6600; /* ボタンの背景色をオレンジに変更 */
+    color: #fff; /* ボタンのテキストカラーを白に変更 */
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
     margin: auto;
-    color: #000;
-    border: 2px solid #000;
-    border-radius: 5px;
-    background: #fff;
-    transition: background 0.2s;
+    transition: background-color 0.3s ease; /* ホバーエフェクトを追加 */
 }
 
 .detail-btn:hover {
+    background-color: #cc5200; /* ホバー時の背景色を濃いオレンジに変更 */
     margin: auto;
-    color: #fff;
-    background: #000;
 }
+
 
 /* 検索結果がない時の表示文字のスタイル */
 h2 {

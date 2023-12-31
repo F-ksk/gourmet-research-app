@@ -145,19 +145,58 @@ img {
     text-decoration: none;
     display: inline-block;
     padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
     margin: auto;
     color: #000;
     border: 2px solid #000;
-    border-radius: 5px;
+    border-radius: 0;
     background: #fff;
-    transition: background 0.2s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
-.detail-btn:hover {
+.detail-btn::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 15px;
+    height: 100%;
     margin: auto;
-    color: #fff;
+    content: '';
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+
+    border-radius: 0 50% 50% 0;
     background: #000;
+    line-height: 30px;
+
+
+    content: '\f061';
+    -webkit-transform: translateX(460%) translateY(.5rem);
+    transform: translateX(460%) translateY(.5rem);
+
+    color: #fff;
+    border-radius: 50%;
+}
+
+.detail-btn:hover::before {
+    margin: auto;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+    line-height: 30px;
+
+
+    content: '\f061';
+    -webkit-transform: translateX(460%) translateY(.5rem);
+    transform: translateX(460%) translateY(.5rem);
+
+    color: #fff;
+    border-radius: 50%;
 }
 
 /* 検索結果がない時の表示文字のスタイル */

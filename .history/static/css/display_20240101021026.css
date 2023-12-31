@@ -55,14 +55,14 @@ h1 {
 }
 
 .content nav {
-    background-color: gray; 
+    background-color: gray; /* ナビゲーションの背景色を青に変更 */
     padding: 10px;
     z-index: 9999;
 }
 
 .page-item.active .page-link {
-    color: #fff; 
-    background-color: black; 
+    color: #fff; /* アクティブなページのテキストカラーを白に変更 */
+    background-color: black; /* アクティブなページの背景色を青に変更 */
     border-color: black;
 }
 
@@ -83,11 +83,11 @@ h1 {
 
 .pagination li a {
     text-decoration: none;
-    color: black;
+    color: black; /* ページリンクのテキストカラーを青に変更 */
     padding: 5px 10px;
-    border: 1px solid black; 
+    border: 1px solid black; /* ページリンクのボーダーカラーを青に変更 */
     border-radius: 5px;
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.5s;
 }
 
 .pagination li a:hover {
@@ -140,24 +140,20 @@ img {
 
 /* 詳細ボタンのスタイル */
 .detail-btn {
-    width: 100px;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
     margin: auto;
-    color: #000;
-    border: 2px solid #000;
-    border-radius: 5px;
-    background: #fff;
-    transition: background 0.2s;
 }
 
 .detail-btn:hover {
+    background-color: #0056b3;
     margin: auto;
-    color: #fff;
-    background: #000;
 }
 
 /* 検索結果がない時の表示文字のスタイル */

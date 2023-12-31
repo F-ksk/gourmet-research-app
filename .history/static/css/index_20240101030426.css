@@ -97,14 +97,10 @@ input[type="submit"]:hover {
     background: #000;
     color: #fff;
     text-shadow: 0 0 1px rgba(0,0,0,.7);
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.37);
 }
 
 .radio-area-input:hover + .radio-area-label {
-    box-shadow: 
-    0 0 2px 0 #000 inset,
-    2px 3px 4px rgba(0, 0, 0, 0.37);
-    cursor: pointer;
+    box-shadow: 0 0 3px 0 #000 inset;
 }
 
 #txt-area-label{
@@ -116,14 +112,10 @@ input[type="submit"]:hover {
     background: #000;
     color: #fff;
     text-shadow: 0 0 1px rgba(0,0,0,.7);
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.37);
 }
 
 .radio-range-input:hover + .radio-range-label {
-    box-shadow: 
-    0 0 2px 0 #000 inset,
-    2px 3px 4px rgba(0, 0, 0, 0.37);
-    cursor: pointer;
+    box-shadow: 0 0 3px 0 #000 inset;
 }
 
 /* 検索ジャンルのラジオボタンスタイル */
@@ -131,12 +123,8 @@ input[type="submit"]:hover {
     background: #000;
     color: #fff;
     text-shadow: 0 0 1px rgba(0,0,0,.7);
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.37);
 }
 
 .radio-genre-input:hover + .radio-genre-label {
-    box-shadow: 
-    0 0 2px 0 #000 inset,
-    2px 3px 4px rgba(0, 0, 0, 0.37);
-    cursor: pointer;
+    box-shadow: 0 0 3px 0 #000 inset;
 }

@@ -149,15 +149,23 @@ img {
     margin: auto;
     color: #000;
     border: 2px solid #000;
-    border-radius: 5px;
+    border-radius: 0;
     background: #fff;
-    transition: background 0.2s;
 }
 
-.detail-btn:hover {
+.detail-btn:hover::before {
     margin: auto;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+    line-height: 30px;
+
+
+    content: '\f061';
+    -webkit-transform: translateX(460%) translateY(.5rem);
+    transform: translateX(460%) translateY(.5rem);
+
     color: #fff;
-    background: #000;
+    border-radius: 50%;
 }
 
 /* 検索結果がない時の表示文字のスタイル */
