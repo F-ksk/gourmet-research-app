@@ -94,13 +94,13 @@ input[type="submit"]:hover {
 
 /* 検索エリアのラジオボタンスタイル */
 .radio-area-input:checked + .radio-area-label {
-    background: rgba(25, 182, 1, 0.651);
+    background: rgba(53, 245, 24, 0.429);
     color: #fff;
     text-shadow: 0 0 1px rgba(0,0,0,.7);
 }
 
 .radio-area-input:hover + .radio-area-label {
-    box-shadow: 0 0 2px 0 rgba(25, 182, 1, 0.651) inset;
+    box-shadow: 0 0 2px 0 rgba(245, 175, 24, 0.429) inset;
 }
 
 #txt-area-label{
@@ -109,22 +109,22 @@ input[type="submit"]:hover {
 
 /* 検索範囲のラジオボタンスタイル */
 .radio-range-input:checked + .radio-range-label {
-    background: rgba(25, 182, 1, 0.651);
+    background: rgba(245, 175, 24, 0.429);
     color: #fff;
     text-shadow: 0 0 1px rgba(0,0,0,.7);
 }
 
 .radio-range-input:hover + .radio-range-label {
-    box-shadow: 0 0 2px 0 rgba(25, 182, 1, 0.651) inset;
+    box-shadow: 0 0 2px 0 rgba(245, 175, 24, 0.429) inset;
 }
 
 /* 検索ジャンルのラジオボタンスタイル */
 .radio-genre-input:checked + .radio-genre-label {
-    background: rgba(25, 182, 1, 0.651);
+    background: rgba(245, 175, 24, 0.429);
     color: #fff;
     text-shadow: 0 0 1px rgba(0,0,0,.7);
 }
 
 .radio-genre-input:hover + .radio-genre-label {
-    box-shadow: 0 0 2px 0 rgba(25, 182, 1, 0.651) inset;
+    box-shadow: 0 0 2px 0 rgba(245, 175, 24, 0.429) inset;
 }
