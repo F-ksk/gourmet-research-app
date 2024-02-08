@@ -1,6 +1,7 @@
 # Ignore config.py .env
 config.py
 .env
+簡易仕様書
 
 # Ignore config folder and all its contents
 /config/

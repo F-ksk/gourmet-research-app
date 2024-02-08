@@ -1,8 +1,0 @@
-# Ignore config.py .env
-config.py
-.env
-runtime.txt
-Procfile
-
-# Ignore config folder and all its contents
-/config/
